@@ -1,38 +1,332 @@
-.App {
+@font-face {
+  font-family: 'Termina Light';
+  src: url('/public/fonts/Termina\ Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Termina Medium';
+  src: url('/public/fonts/Termina\ Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Termina Black';
+  src: url('/public/fonts/Termina\ Black.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Termina Regular';
+  src: url('/public/fonts/Termina\ Regular.otf') format('opentype');
+} 
+* {
+  box-sizing: border-box;
+ }*:before,
+ *:after {
+  box-sizing: border-box;
+ }html,
+ body {
+  font-family: 'Termina Light';
+  height: 100%;
+  position: relative;
+  background-color: hsla(316.0975609756098, 71.10%, 66.08%, 1.00);
+  background-image: url(../public/BGTEXTURE.png);
+  background-position: 0px 0px;
+  background-size: auto;
+  background-attachment: fixed;
+  padding-top: 60px;
+}
+
+
+h1, h2, h3, h4, h5, h6 {font-family: 'Termina Medium';}
+
+.heading {
+  position: static;
+  max-width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Termina', sans-serif;
+  color: #fff;
+  line-height: 40px;
+  font-weight: 500;
+  text-align: left;
+  letter-spacing: 20px;
+  -o-object-fit: scale-down;
+  object-fit: scale-down;
+}
+
+.navbar-no-shadow {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: auto;
+  background-color: hsla(316.0975609756098, 71.10%, 66.08%, 1.00) !important;
+}
+
+.navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {}
+
+.navbar-brand:small {
+  padding-left: 0px;
+}
+
+.nav-link {
+  font-family: 'Termina Medium'; 
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  color: hsla(228, 0.00%, 100.00%, 1.00);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  text-decoration: none;
+}
+
+.nav-link:small {
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav-link:focus-visible {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  outline-color: hsla(214.6153846153846, 100.00%, 37.00%, 1.00);
+  outline-offset: 0px;
+  outline-style: solid;
+  outline-width: 2px;
+  color: hsla(214.6153846153846, 100.00%, 37.00%, 1.00);
+}
+
+.nav-link:medium {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.nav-link:hover {
+  color: rgba(26, 27, 31, 0.75);
+}
+
+
+.nav-dropdown-toggle {
+  padding-top: 5px;
+  padding-right: 30px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+}
+
+.nav-dropdown-toggle:hover {
+  color: rgba(26, 27, 31, 0.75);
+}
+
+.nav-dropdown-toggle:small {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav-dropdown-toggle:focus-visible {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  outline-color: hsla(214.6153846153846, 100.00%, 37.00%, 1.00);
+  outline-offset: 0px;
+  outline-style: solid;
+  outline-width: 2px;
+  color: hsla(214.6153846153846, 100.00%, 37.00%, 1.00);
+}
+
+
+.button-primary {
+  font-family: 'Termina Medium';
+  padding-top: 12px;
+  padding-right: 25px;
+  padding-bottom: 12px;
+  padding-left: 25px;
+  background-color: #343434 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+  color: hsla(0, 0.00%, 100.00%, 1.00);
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.button-primary:hover {
+  background-color: #32343a;
+}
+
+.button-primary:active {
+  background-color: #43464d;
+}
+
+.centered-container {
+  align-self: flex-start;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.centered-container:tiny {
+  text-align: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.column-3 {
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.columns-3:small {
+  margin-top: 0px;
+}
+
+.columns {
+  display: flex;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.columns:small {
+  display: none;
+}
+
+.columns.statement {
+  display: flex;
+  margin-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: hsla(0, 30.00%, 0.00%, 0.20);
+}
+
+.columns.statement:small {
+  display: none;
+}
+
+.container-regular {
+  width: 100%;
+  max-width: 1260px;
+  min-height: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.content-wrapper {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 100px; /* height of your footer */
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-dark {
+  position: relative;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: hsla(212.00000000000006, 38.46%, 92.35%, 1.00);
+  background-color: hsla(216, 0.00%, 0.00%, 0.20);
+}
+
+.footer-dark:small {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.footer-block {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.footer-block:small {
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Block:local-styles {
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+  grid-row-start: span 1;
+  grid-row-end: span 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title-small {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer-link {
+  margin-top: 12px;
+  margin-bottom: 6px;
+  color: #1a1b1f;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: rgba(26, 27, 31, 0.75);
+}
+
+.footer-copyright-center {
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+}
+
+.fill-white {
+  fill: white;
+}
+
+.text-block {
+  padding-right: 20px;
+  padding-left: 20px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 300;
+  text-align: justify;
+  white-space: normal;
+}
+
+.w-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 940px;
 }
